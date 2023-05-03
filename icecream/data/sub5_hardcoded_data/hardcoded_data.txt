@@ -1,0 +1,18 @@
+Intended solution:
+    Take prefix sums of {hours,skill increase} of lectures for all topics
+    For each topic, we must take exactly one option
+    Use 2-dimensional dp: 
+    Let dp[i][j] consider the subproblem where we have considered up to the ith topic, and have j hours left to spend
+    dp[i][j] will store the maximum skill level we can have by this subproblem.
+    Recurrence: dp[i][j]=max(dp[i-1][j+hours_k]+skill_k), for all options k in prefix sums for topic i such that j+hours_k<=H
+    Answer is max(dp[N][i]) for 0<=i<=H
+
+Wrong solutions and their hardcoded breaking cases:
+    1. slow algorithms/dp array too small: N,L,H=1000, optimal solution must take all lectures of topic 1000
+    2. forgot to include {0,0} in prefix sums: have an empty topic so dp[i][j] for some constant i and variable j is uninitialised
+    3. forgot long longs: big skill increases, small cost
+    4. forgot to consider dp[i][0]: solution is to expend all our hours
+    5. used the recurrence even when j+hours_k>H: have two lectures, one that costs H hours, and another in another topic that costs 1 hour
+    6. used only options where j+hours_k<=H-1: the optimal solution must use a lecture that is H hours long
+    7. output answer as dp[N][H]/dp[N][0] or something specific like that: make the answer dp[N][4]
+    8. output answer as max(dp[N][i]) for 1<=i<=H: make the answer dp[N][0]

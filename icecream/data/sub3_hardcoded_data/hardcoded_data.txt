@@ -1,0 +1,13 @@
+Intended solution for sub3:
+    2-dimensional dp on prefix sums (like for sub5):
+    dp[prefix of topics][hours left]
+
+Wrong solutions and their hardcoded breaking cases:
+    1. slow algorithms/dp array too small: N=500, H=1000, optimal solution must take all lectures
+    2. forgot to include {0,0} for a topic: optimal solution is to take no lectures for some topic
+    3. forgot long longs: big skill increases, small cost
+    4. forgot to consider dp[i][0]: solution is to expend all our hours
+    5. used the recurrence even when j+hours_k>H: have two first lectures, one that costs H hours, and another in another topic that costs 1 hour
+    6. used only options where j+hours_k<=H-1: the optimal solution must use a lecture that is H hours long
+    7. output answer as dp[N][H] or dp[N][0] or something specific like that: make the answer dp[N][4]
+    8. output answer as max(dp[N][i]) for 1<=i<=H: make the answer dp[N][0]

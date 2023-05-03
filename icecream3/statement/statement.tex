@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+\usepackage[textwidth=460pt, voffset=0pt]{geometry}
+\usepackage{fancyhdr}
+\begin{document}
+\title{\vspace{-5ex}Ice-cream Obsession 3}
+\author{\vspace{-5ex}}
+\date{\vspace{-5ex}}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ACIO 2023 Contest 1}
+\rfoot{Page \thepage}
+
+\begin{center}
+\huge{Ice-cream Obsession 3}\small\\
+\vspace{5ex}
+\begin{tabular}{|c|c|} 
+\hline
+Time Limit & Memory Limit \\
+\hline
+1 second & 128 MB \\
+
+\hline
+\end{tabular}
+\end{center}
+\section*{Statement}
+
+A person has been found unconscious at an ice cream tasting event after suffering acute brain freeze.
+
+You are the driver of the ambulance rushing this person to hospital. The country has $N$ cities (numbered 1 to $N$) and $M$ bidirectional roads between them of varying length. You are currently at city 1. You aren't going to make it to the hospital at city $N$ in time, but you have a trick up your sleeve.
+
+Using your portal gun, you can teleport from a city to any neighbouring city you can get to by road, effectively reducing the distance of that road to zero. However, you can only use your portal gun once.
+
+With your portal gun powers, what is the minimum distance you need to travel by road to get from city 1 to city $N$?
+
+\section*{Input}
+
+\begin{itemize}
+\item The first line of input contains the integers $N$ and $M$.
+\item The next $M$ lines contain three integers: $a$, $b$, $w$, meaning there is a bidirectional road from city $a$ to $b$ of length $w$ metres.
+\end{itemize}
+
+\section*{Output}
+
+Output a single integer; the shortest path length.
+
+\begin{multicols}{2}
+\section*{Sample Input 1}
+{\tt
+5 5\\
+1 2 1\\
+1 3 2\\
+2 4 2\\
+3 4 3\\
+4 5 1
+}
+\columnbreak
+\section*{Sample Output 1}
+{\tt
+2
+}
+\end{multicols}
+\section*{Constraints}
+\begin{itemize}
+\item $1\leq N \leq 10^5$
+\item $1 \leq M \leq 2 \times 10^5$
+\item $1 \le w \le 10^4$
+\item You are guaranteed a path exists from 1 to $N$.
+\item There are no self-edges and at most one road goes from $a$ to $b$ for any cities $a$, $b$.
+\end{itemize}
+
+\section*{Subtasks}
+\begin{tabular}{l*{6}{c}r}
+Number & Points & Other constraints\\
+\hline
+1 & 30 & $N \le 1000$\\
+2 & 10 & $w = 1$ for all edges\\
+3 & 60 & No other constraints
+\end{tabular}
+\end{document}

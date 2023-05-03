@@ -1,0 +1,12 @@
+Intended solution for sub1:
+    greedy: take all lectures that you can
+
+Wrong solutions and their hardcoded breaking cases:
+    1. slow algorithms/dp array too small: L,H=1000, optimal solution must take all lectures
+    2. forgot long longs: big skill increases, small cost
+    3. forgot to consider final lecture: solution is to take up to the last lecture, with some hours remaining
+    4. same thing, but worse: solution is to expend all our hours on last lecture
+    5. went over the hours limit of H: have two lectures, one that costs H hours, and another in another topic that costs 1 hour
+    6. used under the limit of H: the optimal solution must use lectures that add up to H hours
+    7. bad base case: use only one lecture that is H hours long
+    8. bad looping: use only one lecture that is not H hours long
